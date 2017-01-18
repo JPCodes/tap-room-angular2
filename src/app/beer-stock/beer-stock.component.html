@@ -1,0 +1,10 @@
+<ul>
+  <li class="unique-font" *ngFor="let currentKeg of kegs">{{currentKeg.name}}
+    <ul>
+      <li>Manufactured By {{currentKeg.brand}}</li>
+      <li>${{currentKeg.price}}</li>
+      <li>{{currentKeg.alcoholContent}}% ABV</li>
+      <li>{{currentKeg.remainingKegs}} Kegs Remaining</li>
+    </ul>
+  </li>
+</ul>
