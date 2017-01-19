@@ -1,5 +1,5 @@
 <div class="container">
   <h1>MarJamesies Tap Room</h1>
-  <app-beer-stock [childBeerStock]="masterBeerStock"></app-beer-stock>
+  <app-beer-stock [childBeerStock]="masterBeerStock" (saleSender)="sellPint($event)"></app-beer-stock>
   <app-new-keg (newKegSender)="addKeg($event)"></app-new-keg>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Keg } from '../keg';
 
 @Component({
@@ -8,6 +8,7 @@ import { Keg } from '../keg';
 
 export class BeerStockComponent {
   @Input() childBeerStock: Keg[];
+  @Output() saleSender = new EventEmitter();
 
   priceColor(currentKeg) {
     if (currentKeg.price <= 2) {
@@ -19,8 +20,8 @@ export class BeerStockComponent {
     }
   }
 
-  sellPint(currentKeg, amount) {
-    console.log('clicked');
-    return currentKeg.pints - amount;
+  sendSale(currentKeg) {
+    this.saleSender.emit(currentKeg);
   }
+
 }
