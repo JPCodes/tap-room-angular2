@@ -29,7 +29,7 @@ export class AppComponent {
       currentKeg.remainingPints = 124;
     }
 
-    if (currentKeg.remainingPints < 60 && currentKeg.remainingKegs === 0) {
+    if (currentKeg.remainingPints === 60 && currentKeg.remainingKegs === 0) {
       alert('Iono just be like "oh no! exclamation mark." Time to stock up!');
     }
   }
