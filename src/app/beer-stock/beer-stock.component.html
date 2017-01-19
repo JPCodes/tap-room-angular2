@@ -1,5 +1,5 @@
 <ul>
-  <li class="unique-font" [class]="priceColor(currentKeg)" *ngFor="let currentKeg of kegs">{{currentKeg.name}}
+  <li class="unique-font" [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childBeerStock">{{currentKeg.name}}
     <ul>
       <li>Manufactured By {{currentKeg.brand}}</li>
       <li>${{currentKeg.price}}</li>
