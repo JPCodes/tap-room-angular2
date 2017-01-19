@@ -1,0 +1,20 @@
+<div *ngIf="childSelectedKeg">
+  <h1>Edit Keg</h1>
+  <label>Enter new keg name:</label>
+  <input [(ngModel)]="childSelectedKeg.name" class="form-control">
+  <label>Enter brand:</label>
+  <input [(ngModel)]="childSelectedKeg.brand" class="form-control">
+  <label>Enter Price:</label>
+  <input [(ngModel)]="childSelectedKeg.price" class="form-control">
+  <label>Enter Alcohol Content:</label>
+  <input [(ngModel)]="childSelectedKeg.alcoholContent" class="form-control">
+  <label>Enter number of kegs:</label>
+  <select [(ngModel)]="childSelectedKeg.remainingKegs" class="form-control">
+    <option [value]="1">One</option>
+    <option [value]="2">Two</option>
+    <option [value]="3">Three</option>
+  </select>
+  <label>How many pints are left in keg:</label>
+  <input [(ngModel)]="childSelectedKeg.remainingPints" class="form-control">
+  <button (click)="doneEditingClicked()">Done</button>
+</div>

@@ -8,6 +8,8 @@ import { Keg } from './keg';
 })
 
 export class AppComponent {
+  selectedKeg = null;
+
   masterBeerStock : Keg[] = [
     new Keg('Ambar', 'Dos Equis', 2.99, 4.7, 2, 62),
     new Keg('Epicenter Amber', 'SanTan', 3.49, 5.5, 1, 124),
@@ -30,7 +32,14 @@ export class AppComponent {
     if (currentKeg.remainingPints < 60 && currentKeg.remainingKegs === 0) {
       alert('Iono just be like "oh no! exclamation mark." Time to stock up!');
     }
+  }
 
+  editBeer(clickedKeg) {
+    this.selectedKeg = clickedKeg;
+  }
+
+  finishedEditing() {
+    this.selectedKeg = null;
   }
 
 

@@ -9,6 +9,7 @@ import { Keg } from '../keg';
 export class BeerStockComponent {
   @Input() childBeerStock: Keg[];
   @Output() saleSender = new EventEmitter();
+  @Output() kegSendToEdit = new EventEmitter();
 
   priceColor(currentKeg) {
     if (currentKeg.price <= 2) {
@@ -18,6 +19,10 @@ export class BeerStockComponent {
     } else if (currentKeg.price > 4) {
       return "bg-success";
     }
+  }
+
+  editButton(selectedKeg) {
+    this.kegSendToEdit.emit(selectedKeg);
   }
 
   sendSale(currentKeg) {

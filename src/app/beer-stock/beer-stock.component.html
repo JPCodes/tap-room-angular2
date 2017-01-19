@@ -5,6 +5,7 @@
       <li>${{currentKeg.price}}</li>
       <li>{{currentKeg.alcoholContent}}% ABV</li>
       <li>{{currentKeg.remainingKegs}} Kegs Remaining ({{currentKeg.remainingPints}} Pints Remaining in current Keg)</li>
+      <button (click)="editButton(currentKeg)">Edit!</button>
       <button (click)="sendSale(currentKeg)">Sell a pint</button>
     </ul>
   </li>
