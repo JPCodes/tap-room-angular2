@@ -1,5 +1,11 @@
 <ul>
-  <li class="unique-font" [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childBeerStock">{{currentKeg.name}}
+  <select (change)="onChange($event.target.value)">
+    <option value="allAlcohols" selected="selected">All Alcohols</option>
+    <option value="low alcohol">Low Alcohol Content (<5&#37;)</option>
+    <option value="mod alcohol">Moderate to High Alcohol Content (>5&#37;)</option>
+ </select>
+ <br>
+  <li class="unique-font" [class]="priceColor(currentKeg)" *ngFor="let currentKeg of childBeerStock | alcoholness:filterByAlcoholness">{{currentKeg.name}}
     <ul>
       <li>Manufactured By {{currentKeg.brand}}</li>
       <li>${{currentKeg.price}}</li>

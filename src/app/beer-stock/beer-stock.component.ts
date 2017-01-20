@@ -10,6 +10,11 @@ export class BeerStockComponent {
   @Input() childBeerStock: Keg[];
   @Output() saleSender = new EventEmitter();
   @Output() kegSendToEdit = new EventEmitter();
+  filterByAlcoholness: string = "allAlcohols";
+
+  onChange(optionFromMenu) {
+  this.filterByAlcoholness = optionFromMenu;
+}
 
   priceColor(currentKeg) {
     if (currentKeg.price <= 2) {
